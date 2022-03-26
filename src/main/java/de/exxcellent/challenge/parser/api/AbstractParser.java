@@ -3,12 +3,18 @@ package de.exxcellent.challenge.parser.api;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
+import java.util.Collection;
+import java.util.stream.Collectors;
 
 /**
  * Skeleton realisation of parser, contains reusable method of instantiation from common Row class to needed class.
  * Uses reflection for instantiation.
  */
 public abstract class AbstractParser implements Parser {
+
+    public <T> Collection<T> readAndConvert(String filePath, Class<T> clazz) {
+        return readData(filePath).stream().map(it -> getInstance(it, clazz)).collect(Collectors.toList());
+    }
 
     <T> T getInstance(Row data, Class<T> clazz) {
         var fields = clazz.getDeclaredFields();
