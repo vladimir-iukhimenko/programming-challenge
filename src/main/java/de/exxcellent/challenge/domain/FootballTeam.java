@@ -1,5 +1,6 @@
 package de.exxcellent.challenge.domain;
 
+import de.exxcellent.challenge.parser.api.Column;
 
 public class FootballTeam {
     private String team;
@@ -8,6 +9,7 @@ public class FootballTeam {
     private Integer losses;
     private Integer draws;
     private Integer goals;
+    @Column("goals_allowed")
     private Integer goalsAllowed;
     private Integer points;
 

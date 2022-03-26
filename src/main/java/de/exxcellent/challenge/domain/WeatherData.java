@@ -1,5 +1,7 @@
 package de.exxcellent.challenge.domain;
 
+import de.exxcellent.challenge.parser.api.Column;
+
 import java.math.BigDecimal;
 
 public class WeatherData {
@@ -8,6 +10,7 @@ public class WeatherData {
     private Integer mnt;
     private Integer avt;
     private BigDecimal avdp;
+    @Column("1hrp_tpcpn")
     private Integer hrpTpcpn;
     private Integer pdir;
     private BigDecimal avsp;
@@ -16,6 +19,7 @@ public class WeatherData {
     private BigDecimal skyc;
     private Integer mxr;
     private Integer mn;
+    @Column("r_avslp")
     private BigDecimal rAvSLP;
 
     public Integer getTemperatureSpread() {
