@@ -1,5 +1,6 @@
 package de.exxcellent.challenge.parser.impl;
 
+import de.exxcellent.challenge.enumerated.DataSources;
 import de.exxcellent.challenge.exception.ReadFileException;
 import de.exxcellent.challenge.parser.api.AbstractParser;
 import de.exxcellent.challenge.parser.api.Row;
@@ -13,6 +14,11 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class CsvParser extends AbstractParser {
+
+    @Override
+    public DataSources getDataSource() {
+        return DataSources.CSV;
+    }
 
     @Override
     public List<Row> readData(String filePath) {
